@@ -1,7 +1,6 @@
-from personal_assistant.src.models.address_book.address_book import AddressBook
-from personal_assistant.src.utils.formatting.format_table import format_table
+from src.utils.formatting.format_table import format_table
 
-def list_records(book: AddressBook):
+def list_records(book):
     if not book.data:
         print("Address book is empty.")
         return

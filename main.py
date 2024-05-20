@@ -1,17 +1,13 @@
-from handlers.birthday.add_birthday import add_birthday
-from handlers.birthday.get_upcoming_birthdays import get_upcoming_birthdays
-from handlers.birthday.show_birthday import show_birthday
-from handlers.record.add_record import add_record
-from handlers.record.delete_record import delete_record
-from handlers.record.edit_record import edit_record
-from handlers.record.find_record import find_record
-from handlers.record.list_records import list_records
-from storage.AddressBookStorage import AddressBookStorage
-from utils.parse.parse_command import parse_command
+import json
+
+from src.storage import *  
+from src.handlers import *
+from src.utils import *
+
 
 
 def main():
-    storage = AddressBookStorage()
+    storage = AddressBookStorage(JsonSerializationStrategy(), "address_book.json", "w", json.JSONDecodeError)
     book = storage.load()
     parse_command().print_help()
 

@@ -1,8 +1,6 @@
-from personal_assistant.src.handlers.birthday.upcoming_birthday_controller import UpcomingBirthday
-from personal_assistant.src.models.address_book.address_book import AddressBook
+from src.handlers.birthday.upcoming_birthday_controller import UpcomingBirthday
 
-
-def get_upcoming_birthdays(book: AddressBook):
+def get_upcoming_birthdays(book):
     birthday_handler = UpcomingBirthday()
     if not book.data:
         print("Address book is empty.")

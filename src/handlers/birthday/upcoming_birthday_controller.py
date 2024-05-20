@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from personal_assistant.src.handlers.errors.custom_exceptions import CustomeExceptions
+from src.handlers.errors.custom_exceptions import CustomeExceptions
 
 class UpcomingBirthday():
     def determine_congratulation_date(self, birthday: datetime) -> datetime:

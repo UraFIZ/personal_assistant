@@ -1,7 +1,4 @@
-from personal_assistant.src.models.address_book.address_book import AddressBook
-
-
-def show_birthday(book: AddressBook, name: str):
+def show_birthday(book, name: str):
     record = book.find(name)
     if record:
         if record.birthday:

@@ -1,6 +1,5 @@
 from collections import UserDict
-
-from personal_assistant.src.models.address_book.record import Record
+from src.models.address_book.record import Record
 
 
 class AddressBook(UserDict):
@@ -9,6 +8,12 @@ class AddressBook(UserDict):
 
     def find(self, name: str):
         return self.data.get(name)
+    
+    def create_record(self, name: str, phone: str):
+        record = Record(name)
+        record.add_phone(phone)
+        self.add_record(record)
+        return record
 
     def delete(self, name: str):
         try:

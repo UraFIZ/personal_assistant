@@ -1,6 +1,5 @@
-from personal_assistant.src.handlers.errors.custom_exceptions import CustomeExceptions
-from personal_assistant.src.models.general.field import Field
-
+from src.handlers.errors.custom_exceptions import CustomeExceptions
+from src.models.general.field import Field
 
 class Phone(Field):
     def __init__(self, value: str):

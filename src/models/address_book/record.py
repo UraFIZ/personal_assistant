@@ -1,7 +1,7 @@
-from personal_assistant.src.handlers.errors.custom_exceptions import CustomeExceptions
-from personal_assistant.src.models.birthday.birthday import Birthday
-from personal_assistant.src.models.contact.phone import Phone
-from personal_assistant.src.models.general.name import Name
+from src.handlers.errors.custom_exceptions import CustomeExceptions
+from src.models.birthday.birthday import Birthday
+from src.models.contact.phone import Phone
+from src.models.general.name import Name
 
 
 class Record:
@@ -52,10 +52,10 @@ class Record:
             return f"Contact name: {self.name.value}, phones: {phones}, birthday: {self.birthday.value if self.birthday else 'N/A'}"
     
     @classmethod
-    def from_dict(cls, name, data):
+    def from_dict(cls, name, record_data):
         record = cls(name)
-        for phone in data.get("phones", []):
+        for phone in record_data.get("phones", []):
             record.add_phone(phone)
-        if "birthday" in data:
-            record.add_birthday(data["birthday"])
+        if "birthday" in record_data:
+            record.add_birthday(record_data["birthday"])
         return record
